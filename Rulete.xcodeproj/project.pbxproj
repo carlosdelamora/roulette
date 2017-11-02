@@ -12,6 +12,11 @@
 		CAC874B41FA151160022552B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC874B21FA151160022552B /* Main.storyboard */; };
 		CAC874B61FA151160022552B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC874B51FA151160022552B /* Assets.xcassets */; };
 		CAC874B91FA151160022552B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC874B71FA151160022552B /* LaunchScreen.storyboard */; };
+		CAC874C11FA1784D0022552B /* RuleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874C01FA1784D0022552B /* RuleteView.swift */; };
+		CAC874C51FA7D6D10022552B /* DealersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874C41FA7D6D10022552B /* DealersViewController.swift */; };
+		CAC874C71FA7DA0C0022552B /* DealerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874C61FA7DA0C0022552B /* DealerTableViewCell.swift */; };
+		CAC874C91FA7DE310022552B /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874C81FA7DE310022552B /* RecordsViewController.swift */; };
+		CAC874CB1FA7DE630022552B /* Rulet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874CA1FA7DE630022552B /* Rulet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		CAC874B51FA151160022552B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC874B81FA151160022552B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAC874BA1FA151160022552B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAC874C01FA1784D0022552B /* RuleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleteView.swift; sourceTree = "<group>"; };
+		CAC874C41FA7D6D10022552B /* DealersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealersViewController.swift; sourceTree = "<group>"; };
+		CAC874C61FA7DA0C0022552B /* DealerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableViewCell.swift; sourceTree = "<group>"; };
+		CAC874C81FA7DE310022552B /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		CAC874CA1FA7DE630022552B /* Rulet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rulet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +65,16 @@
 			isa = PBXGroup;
 			children = (
 				CAC874AE1FA151160022552B /* AppDelegate.swift */,
+				CAC874C41FA7D6D10022552B /* DealersViewController.swift */,
+				CAC874C81FA7DE310022552B /* RecordsViewController.swift */,
 				CAC874B01FA151160022552B /* ViewController.swift */,
 				CAC874B21FA151160022552B /* Main.storyboard */,
 				CAC874B51FA151160022552B /* Assets.xcassets */,
 				CAC874B71FA151160022552B /* LaunchScreen.storyboard */,
 				CAC874BA1FA151160022552B /* Info.plist */,
+				CAC874C01FA1784D0022552B /* RuleteView.swift */,
+				CAC874C61FA7DA0C0022552B /* DealerTableViewCell.swift */,
+				CAC874CA1FA7DE630022552B /* Rulet.swift */,
 			);
 			path = Rulete;
 			sourceTree = "<group>";
@@ -137,7 +152,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC874B11FA151160022552B /* ViewController.swift in Sources */,
+				CAC874C71FA7DA0C0022552B /* DealerTableViewCell.swift in Sources */,
+				CAC874CB1FA7DE630022552B /* Rulet.swift in Sources */,
+				CAC874C51FA7D6D10022552B /* DealersViewController.swift in Sources */,
+				CAC874C11FA1784D0022552B /* RuleteView.swift in Sources */,
 				CAC874AF1FA151160022552B /* AppDelegate.swift in Sources */,
+				CAC874C91FA7DE310022552B /* RecordsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
