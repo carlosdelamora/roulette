@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Rulet{
+class Roulette{
     
     var iDRuleta:String
     var tipoDeBola:String

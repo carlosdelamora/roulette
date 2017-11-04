@@ -10,7 +10,7 @@ import UIKit
 
 class DealersViewController: UIViewController {
     
-    var rulets:[Rulet] = [Rulet(id:"Yougi", tipoDeBola:"chica", leftOrRight:"left"), Rulet(id:"Hector",tipoDeBola: "chica", leftOrRight:"left")]
+    var rulets:[Roulette] = [Roulette(id:"Yougi", tipoDeBola:"chica", leftOrRight:"left"), Roulette(id:"Hector",tipoDeBola: "chica", leftOrRight:"left")]
     
     @IBOutlet weak var tableView: UITableView!
     

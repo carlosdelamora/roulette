@@ -16,7 +16,7 @@
 		CAC874C51FA7D6D10022552B /* DealersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874C41FA7D6D10022552B /* DealersViewController.swift */; };
 		CAC874C71FA7DA0C0022552B /* DealerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874C61FA7DA0C0022552B /* DealerTableViewCell.swift */; };
 		CAC874C91FA7DE310022552B /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874C81FA7DE310022552B /* RecordsViewController.swift */; };
-		CAC874CB1FA7DE630022552B /* Rulet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874CA1FA7DE630022552B /* Rulet.swift */; };
+		CAC874CB1FA7DE630022552B /* Roulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC874CA1FA7DE630022552B /* Roulette.swift */; };
 		CAF3ECA91FAC085D00555272 /* TimesOfRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3ECA81FAC085D00555272 /* TimesOfRotation.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		CAC874C41FA7D6D10022552B /* DealersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealersViewController.swift; sourceTree = "<group>"; };
 		CAC874C61FA7DA0C0022552B /* DealerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableViewCell.swift; sourceTree = "<group>"; };
 		CAC874C81FA7DE310022552B /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
-		CAC874CA1FA7DE630022552B /* Rulet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rulet.swift; sourceTree = "<group>"; };
+		CAC874CA1FA7DE630022552B /* Roulette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roulette.swift; sourceTree = "<group>"; };
 		CAF3ECA81FAC085D00555272 /* TimesOfRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesOfRotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,7 @@
 				CAC874BA1FA151160022552B /* Info.plist */,
 				CAC874C01FA1784D0022552B /* RuleteView.swift */,
 				CAC874C61FA7DA0C0022552B /* DealerTableViewCell.swift */,
-				CAC874CA1FA7DE630022552B /* Rulet.swift */,
+				CAC874CA1FA7DE630022552B /* Roulette.swift */,
 				CAF3ECA81FAC085D00555272 /* TimesOfRotation.swift */,
 			);
 			path = Rulete;
@@ -156,7 +156,7 @@
 			files = (
 				CAC874B11FA151160022552B /* ViewController.swift in Sources */,
 				CAC874C71FA7DA0C0022552B /* DealerTableViewCell.swift in Sources */,
-				CAC874CB1FA7DE630022552B /* Rulet.swift in Sources */,
+				CAC874CB1FA7DE630022552B /* Roulette.swift in Sources */,
 				CAC874C51FA7D6D10022552B /* DealersViewController.swift in Sources */,
 				CAC874C11FA1784D0022552B /* RuleteView.swift in Sources */,
 				CAC874AF1FA151160022552B /* AppDelegate.swift in Sources */,

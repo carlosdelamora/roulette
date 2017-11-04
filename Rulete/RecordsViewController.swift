@@ -11,7 +11,7 @@ import UIKit
 class RecordsViewController: UIViewController {
 
     
-    var rulet: Rulet!
+    var rulet: Roulette!
     var timer: Timer?
     var ballTimer: Timer?
     var countDoubleZeroButtonPressed: Int = 0
@@ -39,6 +39,11 @@ class RecordsViewController: UIViewController {
     
     @IBOutlet weak var resultTextField: UITextField!
     
+    
+    @IBOutlet weak var timeTextField: UITextField!
+    
+    @IBOutlet weak var betIntervalTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,6 +53,16 @@ class RecordsViewController: UIViewController {
         saveButton.layer.cornerRadius = 5
         clearButton.layer.cornerRadius = 5
         resultTextField.delegate = self
+        resultTextField.keyboardType = .numberPad
+        timeTextField.delegate = self
+        timeTextField.keyboardType = .numbersAndPunctuation
+        betIntervalTextField.delegate = self
+        betIntervalTextField.keyboardType = .numberPad
+        
+        //return the keyboard when somone touches the view.
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(gestureRecognizer)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,6 +137,9 @@ class RecordsViewController: UIViewController {
         clearValues()
     }
     
+    @objc func dismissKeyboard(){
+        view.resignFirstResponder()
+    }
     
     func stringFromTimeInterval(interval: TimeInterval) -> String {
         
@@ -156,5 +174,18 @@ extension RecordsViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    /*func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+     
+        //location is 2 means two characters
+        if range.location == 1{
+            if let _ = textField.text{
+                textField.text! += string
+                textField.resignFirstResponder()
+            }
+        }
+     
+        return true
+    }*/
     
 }
