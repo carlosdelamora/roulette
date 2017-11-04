@@ -146,4 +146,12 @@ class TimesOfRotation{
         let number = displacementByNumber[number]
         return number
     }
+    
+    func diferentialDisplacement(rouletteNumber:String ) -> Double?{
+        guard let diskPosition = diskPosition(), let realDisplacement = realDisplacement(number: rouletteNumber), let positionOfTheBall = ballPosition() else{
+            return nil
+        }
+        
+        return diskPosition + realDisplacement - positionOfTheBall
+    }
 }

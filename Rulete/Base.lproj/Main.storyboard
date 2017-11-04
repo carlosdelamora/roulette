@@ -176,11 +176,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvJ-xu-Ozt">
-                                                <rect key="frame" x="30" y="390" width="80" height="80"/>
+                                                <rect key="frame" x="30" y="390" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.0" green="0.707586453" blue="0.2330747521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="TIC-nW-ft6"/>
-                                                    <constraint firstAttribute="height" constant="80" id="VJU-HM-Qdm"/>
+                                                    <constraint firstAttribute="width" constant="100" id="TIC-nW-ft6"/>
+                                                    <constraint firstAttribute="height" constant="100" id="VJU-HM-Qdm"/>
                                                 </constraints>
                                                 <state key="normal" title="00">
                                                     <color key="titleColor" red="0.1450980392" green="0.1450980392" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -190,11 +190,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsi-Gf-dUd">
-                                                <rect key="frame" x="265" y="390" width="80" height="80"/>
+                                                <rect key="frame" x="245" y="390" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.0" green="0.707586453" blue="0.2330747521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="ZtJ-0j-Upf"/>
-                                                    <constraint firstAttribute="width" constant="80" id="cjM-iw-zn6"/>
+                                                    <constraint firstAttribute="height" constant="100" id="ZtJ-0j-Upf"/>
+                                                    <constraint firstAttribute="width" constant="100" id="cjM-iw-zn6"/>
                                                 </constraints>
                                                 <state key="normal" title="Ball">
                                                     <color key="titleColor" red="0.1450980392" green="0.1450980392" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -233,7 +233,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ib2-K9-y3H">
-                                                <rect key="frame" x="195" y="480" width="150" height="100"/>
+                                                <rect key="frame" x="195" y="500" width="150" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeA-ec-EOA">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
@@ -253,7 +253,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-Hl-xHQ">
-                                                <rect key="frame" x="30" y="490" width="150" height="150"/>
+                                                <rect key="frame" x="30" y="510" width="150" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbS-KW-kdF">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
@@ -393,7 +393,6 @@
                     </view>
                     <connections>
                         <outlet property="ballButton" destination="qsi-Gf-dUd" id="g2n-mh-HBh"/>
-                        <outlet property="ballTimerLabel" destination="DYo-AX-3UV" id="yRu-UG-81r"/>
                         <outlet property="betIntervalTextField" destination="y9I-wb-KNn" id="Qyh-ZQ-SNB"/>
                         <outlet property="clearButton" destination="xmI-Nt-m8g" id="krC-ca-ZW3"/>
                         <outlet property="doubleZeroButton" destination="nvJ-xu-Ozt" id="Ck9-1z-LyJ"/>
@@ -407,6 +406,7 @@
                         <outlet property="segmentForSizeOfBall" destination="NIG-Xa-Xub" id="CEZ-Hl-pE1"/>
                         <outlet property="thirdDoubleZeroLabel" destination="XEh-ZR-NzV" id="LwJ-xq-lap"/>
                         <outlet property="timeTextField" destination="Jgg-RH-bnr" id="f9D-sN-MCl"/>
+                        <outlet property="timerLabel" destination="DYo-AX-3UV" id="yRu-UG-81r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQ4-6p-HIL" userLabel="First Responder" sceneMemberID="firstResponder"/>

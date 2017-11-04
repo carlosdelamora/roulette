@@ -18,12 +18,14 @@ class RecordsViewController: UIViewController {
     var countBallButtonPressed: Int = 0
     var count = 0.0
     var timesOfRotation = TimesOfRotation()
+    var areWeDoneWithBall:Bool = false
+    var areWeDoneWithDisk:Bool = false
     //outlets
     @IBOutlet weak var segmentForSizeOfBall: UISegmentedControl!
     @IBOutlet weak var leftRightSwitch: UISwitch!
     @IBOutlet weak var doubleZeroButton: UIButton!
     @IBOutlet weak var ballButton: UIButton!
-    @IBOutlet weak var ballTimerLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var firstBallLabel: UILabel!
     @IBOutlet weak var secondBallLabel: UILabel!
@@ -55,7 +57,7 @@ class RecordsViewController: UIViewController {
         resultTextField.delegate = self
         resultTextField.keyboardType = .numberPad
         timeTextField.delegate = self
-        timeTextField.keyboardType = .numbersAndPunctuation
+        timeTextField.keyboardType = .decimalPad
         betIntervalTextField.delegate = self
         betIntervalTextField.keyboardType = .numberPad
         
@@ -87,9 +89,12 @@ class RecordsViewController: UIViewController {
         case 3:
             //third click we record and
             thirdDoubleZeroLabel.text = stringFromTimeInterval(interval: count*timeInterval)
-            timer?.invalidate()
             timesOfRotation.diskThirdTime = timeInterval*count
             doubleZeroButton.alpha = 0.25
+            areWeDoneWithDisk = false
+            if areWeDoneWithBall{
+                timer?.invalidate()
+            }
         default:
             break
         }
@@ -102,17 +107,19 @@ class RecordsViewController: UIViewController {
         
         let timeInterval = 0.01
         switch countBallButtonPressed{
+          
         case 1:
-            //first time we run the clock
             timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block:{ _ in
                 self.count += 1.0
                 let timeIntervalElapsed = self.count*timeInterval
                 DispatchQueue.main.async {
-                    self.ballTimerLabel.text = self.stringFromTimeInterval(interval: timeIntervalElapsed)
+                    self.timerLabel.text = self.stringFromTimeInterval(interval: timeIntervalElapsed)
                 }
                 
             } )
         case 2:
+            
+           
             //second click we record the
             firstBallLabel.text = stringFromTimeInterval(interval: count*timeInterval)
             timesOfRotation.ballFirstTime = timeInterval*count
@@ -121,6 +128,10 @@ class RecordsViewController: UIViewController {
             secondBallLabel.text = stringFromTimeInterval(interval: count*timeInterval)
             ballButton.alpha = 0.25
             timesOfRotation.ballSecondTime = timeInterval*count
+            areWeDoneWithBall = true
+            if areWeDoneWithDisk{
+                timer?.invalidate()
+            }
         default:
             break
         }
@@ -138,7 +149,7 @@ class RecordsViewController: UIViewController {
     }
     
     @objc func dismissKeyboard(){
-        view.resignFirstResponder()
+        view.endEditing(true)
     }
     
     func stringFromTimeInterval(interval: TimeInterval) -> String {
@@ -164,6 +175,12 @@ class RecordsViewController: UIViewController {
         countDoubleZeroButtonPressed = 0
         countBallButtonPressed = 0
         count = 0
+        
+        resultTextField.text = ""
+        timerLabel.text = ""
+        
+        areWeDoneWithDisk = false
+        areWeDoneWithBall = false
     }
 
 }
