@@ -17,12 +17,12 @@ class RecordsViewController: UIViewController {
     var countDoubleZeroButtonPressed: Int = 0
     var countBallButtonPressed: Int = 0
     var count = 0.0
+    var timesOfRotation = TimesOfRotation()
     //outlets
     @IBOutlet weak var segmentForSizeOfBall: UISegmentedControl!
     @IBOutlet weak var leftRightSwitch: UISwitch!
     @IBOutlet weak var doubleZeroButton: UIButton!
     @IBOutlet weak var ballButton: UIButton!
-    @IBOutlet weak var doubleZeroTimerLabel: UILabel!
     @IBOutlet weak var ballTimerLabel: UILabel!
     
     @IBOutlet weak var firstBallLabel: UILabel!
@@ -31,8 +31,13 @@ class RecordsViewController: UIViewController {
     
     @IBOutlet weak var firstDoubleZeroLabel: UILabel!
     @IBOutlet weak var secondDoubleZeroLabel: UILabel!
-    @IBOutlet weak var thirdDoubleZeroButton: UILabel!
+    @IBOutlet weak var thirdDoubleZeroLabel: UILabel!
     
+    @IBOutlet weak var clearButton: UIButton!
+    
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var resultTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +45,9 @@ class RecordsViewController: UIViewController {
         doubleZeroButton.layer.cornerRadius = doubleZeroButton.frame.width/2
         ballButton.layer.cornerRadius = ballButton.frame.width/2
         title = rulet.iDRuleta
-        
+        saveButton.layer.cornerRadius = 5
+        clearButton.layer.cornerRadius = 5
+        resultTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +57,27 @@ class RecordsViewController: UIViewController {
     
     @IBAction func doubleZeroWasPressed(_ sender: Any) {
         print("print double zero was pressed ")
+        countDoubleZeroButtonPressed += 1
+        
+        let timeInterval = 0.01
+        switch countDoubleZeroButtonPressed{
+        case 1:
+            //second click we record the
+            firstDoubleZeroLabel.text = stringFromTimeInterval(interval: count*timeInterval)
+            timesOfRotation.diskFirstTime = timeInterval*count
+        case 2:
+            //second click we record and stop the label
+            secondDoubleZeroLabel.text = stringFromTimeInterval(interval: count*timeInterval)
+            timesOfRotation.diskSecondTime = timeInterval*count
+        case 3:
+            //third click we record and
+            thirdDoubleZeroLabel.text = stringFromTimeInterval(interval: count*timeInterval)
+            timer?.invalidate()
+            timesOfRotation.diskThirdTime = timeInterval*count
+            doubleZeroButton.alpha = 0.25
+        default:
+            break
+        }
     }
     
     @IBAction func ballButtonWasPressed(_ sender: Any) {
@@ -72,10 +100,12 @@ class RecordsViewController: UIViewController {
         case 2:
             //second click we record the
             firstBallLabel.text = stringFromTimeInterval(interval: count*timeInterval)
+            timesOfRotation.ballFirstTime = timeInterval*count
         case 3:
             //second click we record and stop the label
             secondBallLabel.text = stringFromTimeInterval(interval: count*timeInterval)
-            timer?.invalidate()
+            ballButton.alpha = 0.25
+            timesOfRotation.ballSecondTime = timeInterval*count
         default:
             break
         }
@@ -83,15 +113,15 @@ class RecordsViewController: UIViewController {
         
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func save(_ sender: Any) {
+        clearValues()
     }
-    */
+    
+    @IBAction func clear(_ sender: Any) {
+        clearValues()
+    }
+    
     
     func stringFromTimeInterval(interval: TimeInterval) -> String {
         
@@ -102,7 +132,29 @@ class RecordsViewController: UIViewController {
         
         return String(format: "%0.2d.%.2d",seconds,ms)
     }
+    
+    func clearValues(){
+        doubleZeroButton.alpha = 1
+        firstDoubleZeroLabel.text = ""
+        secondDoubleZeroLabel.text = ""
+        thirdDoubleZeroLabel.text = ""
+        
+        ballButton.alpha = 1
+        firstBallLabel.text = ""
+        secondBallLabel.text = ""
+        timer?.invalidate()
+        countDoubleZeroButtonPressed = 0
+        countBallButtonPressed = 0
+        count = 0
+    }
 
 }
 
-
+extension RecordsViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+}

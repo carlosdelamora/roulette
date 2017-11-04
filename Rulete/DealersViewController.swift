@@ -53,6 +53,7 @@ extension DealersViewController: UITableViewDelegate{
 extension DealersViewController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
 }
